@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carta para mi amor</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      background-image: url('https://i.imgur.com/JOqf9Mz.png'); /* 🎉 imagen de fondo */
+      background-size: cover;
+      background-position: center;
+      font-family: 'Press Start 2P', monospace;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #texto {
+      white-space: pre-line;
+      font-size: 14px;
+      max-width: 90%;
+      text-shadow: 2px 2px 4px #000;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="texto"></div>
+
+  <script>
+    const mensaje = `
+Querida [nombre de tu novia] 💚
+
+Veo al jugador que tú significas...
+Eres luz en este mundo pixelado, 
+mi diamante en la mina de la vida.
+
+Cada día contigo es una nueva aventura,
+un bioma distinto, un corazón más fuerte.
+
+Gracias por estar, por construir,
+por acompañarme a través de este mundo de bloques.
+
+Hoy no es solo un día más...
+Hoy escribo en este libro encantado
+cuánto te amo.
+
+Siempre tuyo,
+[Tu nombre]
+
+"The End"
+`;
+
+    const elemento = document.getElementById("texto");
+    let i = 0;
+
+    function escribir() {
+      if (i < mensaje.length) {
+        elemento.textContent += mensaje.charAt(i);
+        i++;
+        setTimeout(escribir, 40);
+      }
+    }
+
+    escribir();
+  </script>
+</body>
+</html>
