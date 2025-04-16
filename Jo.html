@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Jo</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      background-image: url('https://i.imgur.com/JOqf9Mz.png'); /* 🎉 imagen de fondo */
+      background-size: cover;
+      background-position: center;
+      font-family: 'Press Start 2P', monospace;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      line-height: 2.5;
+    }
+
+    #texto {
+      white-space: pre-line;
+      font-size: 14px;
+      max-width: 90%;
+      text-shadow: 2px 2px 4px #000;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="texto"></div>
+
+  <script>
+    const mensaje = `
+Primero que nada, es la primera vez que escribo una carta, me siento muy npc y cringe la verdad no te lo voy a negar, pense en hacerla a mano pero mi letra es horrible asi que preferi hacerla digital.  
+Espero te haya gustado el regalo, me costo banda cortar la madera (que me dio mi abuelo) y que quedaran los cubos lo mas perfecto posible, trate de arreglar la mayor cantidad de detalles posibles pero 
+no se me dan muy bien las manualidades. Como sea, habia pensado en regalarte un ramo de flores, pero supongo que lo dejare para otra ocasion, porque siento que te debia mas que eso, necesitaba demostrarte 
+de alguna manera mi cariño y dedicacion por ti, y decidi hacerte algo a mano. Me acuerdo cuando me regalaste el cuadro de killua, me senti querido y valorado, creo que fue ahi cuando me enamore de ti, 
+nadie habia dedicado tiempo para hacerme algo, y creo que eso es lo mas valioso que uno puede ofrecer. De alguna manera quiero que sientas lo mismo que yo senti, y siento que te debo aun mas por todo lo mal 
+que te he hecho sentir ultimamente, quiero que tomes esto aparte como una muestra de mi cariño, tambien una disculpa por haber sido egoista y haber estado pensando en mi, por sobre como te sentias tu, y por 
+no haber estado valorandote como te lo mereces.
+`;
+
+    const elemento = document.getElementById("texto");
+    let i = 0;
+
+    function escribir() {
+      if (i < mensaje.length) {
+        elemento.textContent += mensaje.charAt(i);
+        i++;
+        setTimeout(escribir, 40);
+      }
+    }
+
+    escribir();
+  </script>
+</body>
+</html>
